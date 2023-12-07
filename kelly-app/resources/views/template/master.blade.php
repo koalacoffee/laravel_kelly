@@ -209,6 +209,14 @@
                   </p>
                 </a>
             </li>
+            <li class="nav-item">
+              <a href="{{route('buku.index')}}" class="nav-link">
+                <i class="nav-icon fas fa-book"></i>
+                <p>
+                  Buku
+                </p>
+              </a>
+          </li>
             
         </ul>
       </nav>
@@ -269,6 +277,12 @@
 <script src="{{ url ('dist/js/adminlte.min.js')}}"></script>
 <!-- AdminLTE for demo purposes -->
 <script src="{{ url ('dist/js/demo.js')}}"></script>
+<script>
+  $(".custom-file-input").on("change",function(){
+    var fileName = $(this).val().split("\\").pop();
+    $(this).siblings(".custom-file-label").addClass("selected").html(fileName);
+  })
+</script>
 @yield('js')
 </body>
 </html>

@@ -17,6 +17,8 @@ Route::get('/', function () {
     return view('template/master');
 });
 
+Route::resource('buku',BukuController::class);
+
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
